@@ -12,6 +12,7 @@
 
 int main()
 {
+	//opdracht 2.1
 	std::list<std::string> names{
 		"Piet",
 		"Henk",
@@ -24,11 +25,14 @@ int main()
 		"Wonderwoman",
 		"Hulk"
 	};
-	std::list<std::vector<std::string>> vecArray;
-	std::vector<std::list<std::string>> listArray;
 	names.push_back("Klaas");
 	heroNames.push_back("Panther");
 
+	//opdracht 2.2
+	std::list<std::vector<std::string>> vecArray;
+	std::vector<std::list<std::string>> listArray;
+
+	//opdracht 2.3
 	std::list<std::string> combinedList;
 	int i = 0;
 	for (std::list<std::string>::iterator it = names.begin(); it != names.end(); ++it) {
@@ -41,6 +45,7 @@ int main()
 		i++;
 	}
 	
+	//opdracht 2.4
 	i = 0;
 	std::vector<std::string> tokens;
 	std::map<std::string, std::string> namesMap;
@@ -53,7 +58,9 @@ int main()
 	for (std::string s : tokens) {
 		std::cout << s << std::endl;
 	}
-	for (int i = 0; i < tokens.size();) {
+
+	//opdracht 2.5
+	for (i = 0; i < tokens.size();) {
 		namesMap.insert(std::pair<std::string, std::string>(tokens.at(i), tokens.at(i + 1)));
 		if (i + 2 < tokens.size()) {
 			i += 2;
@@ -65,6 +72,13 @@ int main()
 	for (std::pair<std::string, std::string> p : namesMap) {
 		std::cout << p.first << " " << p.second << std::endl;
 	}
+
+	//opdracht 2.6
+	combinedList.sort();
+	for (std::string s : combinedList) {
+		std::cout << s << std::endl;
+	}
+	
 	
 	
 }
